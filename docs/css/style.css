@@ -54,7 +54,7 @@ img {
   vertical-align: top
 }
 .elemetn {
-  min-height: 100vh
+  /* min-height: 100vh */
 }
 .cleanImg,
 .foonterItem.button,
