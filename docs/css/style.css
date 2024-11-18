@@ -1,0 +1,269 @@
+* {
+  padding: 0;
+  margin: 0;
+  border: 0
+}
+*,
+*::after,
+*::before {
+  box-sizing: border-box
+}
+*::after,
+*::before {
+  display: inline-block
+}
+body,
+html {
+  height: 100%;
+  min-width: 320px
+}
+body {
+  color: #000;
+  line-height: 1;
+  font-family: Inter,sans-seriv;
+  font-size: .875rem;
+  -ms-text-size-adjust: 100%;
+  -moz-text-size-adjust: 100%;
+  -webkit-text-size-adjust: 100%;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale
+}
+button,
+input,
+textarea {
+  font-family: Inter,sans-seriv;
+  font-size: inherit;
+  line-height: inherit;
+  color: inherit;
+  background-color: rgba(0,0,0,0)
+}
+button,
+option,
+select {
+  cursor: pointer
+}
+a {
+  display: inline-block;
+  color: inherit;
+  text-decoration: none
+}
+ul li {
+  list-style: none
+}
+img {
+  vertical-align: top
+}
+[class*=__container] {
+  max-width: 75rem;
+  margin: 0 auto;
+  padding: 0 .9375rem
+}
+[class*="--gc"] {
+  display: grid;
+  min-width: 0;
+  grid-template-columns: .9375rem 1fr minmax(auto,73.125rem) 1fr .9375rem
+}
+[class*="--gc"]>* {
+  min-width: 0;
+  grid-column: 3/4
+}
+.ibg {
+  width: 100%;
+  height: 100%;
+  -o-object-fit: cover;
+  object-fit: cover
+}
+.ibg--top {
+  -o-object-position: top;
+  object-position: top
+}
+.ibg--bottom {
+  -o-object-position: bottom;
+  object-position: bottom
+}
+.ibg--left {
+  -o-object-position: left;
+  object-position: left
+}
+.ibg--right {
+  -o-object-position: right;
+  object-position: right
+}
+.ibg--contain {
+  -o-object-fit: contain;
+  object-fit: contain
+}
+.banner {
+  overflow: hidden;
+  min-height: 37.5rem;
+  display: flex;
+  flex-direction: column
+}
+.banner img {
+  width: 100%;
+  height: auto
+}
+.container {
+  flex: 1;
+  position: relative;
+  padding-inline: 1.25rem;
+  width: 100%;
+  max-width: 79.375rem;
+  margin-inline: auto;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between
+}
+.header {
+  display: flex;
+  justify-content: space-between
+}
+.headerHoodie {
+  max-width: 5.625rem
+}
+.headerSubLogo {
+  max-width: 1.875rem
+}
+.logoBigWrap {
+  flex: 1;
+  position: relative
+}
+.logoBigImg {
+  left: 50%;
+  -webkit-transform: translate(-50%,0);
+  transform: translate(-50%,0);
+  position: relative
+}
+.cleanFit {
+  position: absolute;
+  z-index: 3;
+  top: 57%;
+  left: 50%;
+  -webkit-transform: translate(-50%,-50%);
+  transform: translate(-50%,-50%);
+  max-width: 26.0625rem
+}
+.personsItems {
+  position: absolute;
+  inset: 0;
+  z-index: 2;
+  display: grid;
+  align-items: end
+}
+.personsItem {
+  position: relative
+}
+.personsItem img {
+  position: absolute;
+  bottom: 0;
+  left: 50%;
+  -webkit-transform: translate(-50%,0);
+  transform: translate(-50%,0);
+  width: 25.8125rem!important
+}
+.item_1 {
+  z-index: 2
+}
+.item_2 {
+  z-index: 3
+}
+.item_3 {
+  z-index: 4
+}
+.item_4 {
+  z-index: 3
+}
+.item_5 {
+  z-index: 2
+}
+.item_6 {
+  z-index: 1
+}
+.footer {
+  position: relative;
+  z-index: 5;
+  display: grid;
+  align-items: center
+}
+.foonterItem.collection {
+  max-width: 12.5rem
+}
+.foonterItem.smash {
+  max-width: 4.4375rem;
+  justify-self: flex-end
+}
+@media (min-width:29.99875em) {
+  .container {
+    padding-top: .625rem
+  }
+  .header {
+    margin-bottom: .9375rem
+  }
+  .headerRight {
+    display: flex;
+    gap: 0 4.5rem
+  }
+  .headerLogo {
+    max-width: 6.125rem
+  }
+  .personsItems {
+    grid-template-columns: repeat(6,1fr)
+  }
+}
+@media (min-width:53.18625em) {
+  .container {
+    padding-bottom: 1.25rem
+  }
+  .footer {
+    grid-template-columns: repeat(3,1fr)
+  }
+  .foonterItem.button {
+    max-width: 11.5rem;
+    justify-self: center
+  }
+}
+@media (min-width:81.31125em) {
+  .logoBigWrap {
+    margin: 0 -5.25rem
+  }
+}
+@media (max-width:81.31125em) {
+  .logoBigWrap {
+    margin: 0 -1.25rem
+  }
+}
+@media (max-width:53.18625em) {
+  .container {
+    padding-bottom: 3.125rem
+  }
+  .logoBigImg {
+    position: absolute;
+    top: 0;
+    width: 53.125rem!important
+  }
+  .footer {
+    grid-template-columns: repeat(2,1fr)
+  }
+  .foonterItem.button {
+    display: none
+  }
+}
+@media (max-width:29.99875em) {
+  .container {
+    padding-top: 1.875rem
+  }
+  .header {
+    margin-bottom: 1.875rem
+  }
+  .headerLogo {
+    display: none
+  }
+  .personsItems {
+    grid-template-columns: repeat(3,1fr)
+  }
+  .item_1,
+  .item_2,
+  .item_3 {
+    display: none
+  }
+}

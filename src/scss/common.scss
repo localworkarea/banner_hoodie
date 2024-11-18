@@ -1,0 +1,181 @@
+.banner {
+  overflow: hidden;
+  min-height: toRem(600);
+  display: flex;
+  flex-direction: column;
+  img {
+    width: 100%;
+    height: auto;
+  }
+}
+.container {
+  flex: 1;
+  position: relative;
+  padding-inline: toRem(20);
+  width: 100%;
+  max-width: toRem(1270);
+  margin-inline: auto;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  @media (min-width:toEm(850.98)){
+    padding-bottom: toRem(20);
+  }
+  @media (max-width: toEm(850.98)){
+    padding-bottom: toRem(50); 
+  }
+  @media (min-width:$mobileSmall){
+    padding-top: toRem(10);
+  }
+  @media (max-width:$mobileSmall){
+     padding-top: toRem(30);
+  }
+}
+.header {
+  display: flex;
+  justify-content: space-between;
+  @media (min-width:$mobileSmall){
+     margin-bottom: toRem(15); 
+  }
+  @media (max-width:$mobileSmall){
+     margin-bottom: toRem(30); 
+  }
+}
+.headerHoodie {
+  max-width: toRem(90);
+}
+.headerRight {
+  @media (min-width:$mobileSmall){
+    display: flex;
+    gap: 0 toRem(72);
+  }
+}
+.headerLogo {
+  @media (min-width:$mobileSmall){
+    max-width: toRem(98);
+  }
+  @media (max-width:$mobileSmall){
+     display: none; 
+  }
+}
+.headerSubLogo {
+  max-width: toRem(30);
+}
+
+
+.logoBigWrap {
+  flex: 1;
+  position: relative;
+  @media (min-width:toEm(1300.98)){
+    margin: 0 toRem(-84);
+  }
+  @media (max-width: toEm(1300.98)){
+      margin: 0 toRem(-20);
+  }
+}
+
+.logoBigImg {
+  left: 50%;
+  transform: translate(-50%,0);
+  position: relative;
+  @media (max-width: toEm(850.98)){
+    position: absolute;
+    top: 0;
+    width: toRem(850) !important;
+  }
+}
+.cleanFit {
+  position: absolute;
+  z-index: 3;
+  top: 57%;
+  left: 50%;
+  transform: translate(-50%,-50%);
+  max-width: toRem(417);
+}
+.personsItems {
+  position: absolute;
+  inset: 0;
+  z-index: 2;
+  display: grid;
+  align-items: end;
+  @media (min-width:$mobileSmall){
+    grid-template-columns: repeat(6,1fr);
+  }
+  @media (max-width:$mobileSmall){
+    grid-template-columns: repeat((3,1fr));   
+  }
+}
+.personsItem {
+  position: relative;
+  img {
+    position: absolute;
+    bottom: 0;
+    left: 50%;
+    transform: translate(-50%,0);
+    width: toRem(413) !important;
+  }
+}
+.item {
+  &_1,
+  &_2,
+  &_3 {
+    @media (max-width:$mobileSmall){
+       display: none; 
+    }
+  }
+	// .item_1
+	&_1 {
+    z-index: 2;
+	}
+	// .item_2
+	&_2 {
+    z-index: 3;
+	}
+	// .item_3
+	&_3 {
+    z-index: 4;
+	}
+	// .item_4
+	&_4 {
+    z-index: 3;
+	}
+	// .item_5
+	&_5 {
+    z-index: 2;
+	}
+	// .item_6
+	&_6 {
+    z-index: 1;
+	}
+}
+.footer {
+  position: relative;
+  z-index: 5;
+  display: grid;
+  align-items: center;
+  @media (min-width:toEm(850.98)){
+    grid-template-columns: repeat(3,1fr);
+  }
+  @media (max-width: toEm(850.98)){
+      grid-template-columns: repeat(2,1fr);
+  }
+}
+.foonterItem {
+  &.collection {
+    max-width: toRem(200);
+  }
+  &.button {
+    @media (min-width:toEm(850.98)){
+      max-width: toRem(184);
+      justify-self: center;
+    }
+    @media (max-width: toEm(850.98)){
+      display: none;
+    }
+  }
+  &.smash {
+    max-width: toRem(71);
+    justify-self: flex-end;
+    
+  }
+}
