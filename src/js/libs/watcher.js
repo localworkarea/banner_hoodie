@@ -19,20 +19,16 @@ class ScrollWatcher {
 		this.observer;
 		!document.documentElement.classList.contains('watcher') ? this.scrollWatcherRun() : null;
 	}
-	// Оновлюємо конструктор
 	scrollWatcherUpdate() {
 		this.scrollWatcherRun();
 	}
-	// Запускаємо конструктор
 	scrollWatcherRun() {
 		document.documentElement.classList.add('watcher');
 		this.scrollWatcherConstructor(document.querySelectorAll('[data-watch]'));
 	}
-	// Конструктор спостерігачів
 	scrollWatcherConstructor(items) {
 		if (items.length) {
 			this.scrollWatcherLogging(`Прокинувся, стежу за об'єктами (${items.length})...`);
-			// Унікалізуємо параметри
 			let uniqParams = uniqArray(Array.from(items).map(function (item) {
 				// Обчислення автоматичного Threshold
 				if (item.dataset.watch === 'navigator' && !item.dataset.watchThreshold) {
@@ -166,18 +162,6 @@ class ScrollWatcher {
 				entry: entry
 			}
 		}));
-
-		/*
-		// Вибираємо потрібні об'єкти
-		if (targetElement.dataset.watch === 'some value') {
-			// пишемо унікальну специфіку
-		}
-		if (entry.isIntersecting) {
-			//Бачимо об'єкт
-		} else {
-			//Не бачимо об'єкт
-		}
-		*/
 	}
 }
 // Запускаємо та додаємо в об'єкт модулів

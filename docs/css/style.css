@@ -53,45 +53,27 @@ ul li {
 img {
   vertical-align: top
 }
-[class*=__container] {
-  max-width: 75rem;
-  margin: 0 auto;
-  padding: 0 .9375rem
+.elemetn {
+  min-height: 100vh
 }
-[class*="--gc"] {
-  display: grid;
-  min-width: 0;
-  grid-template-columns: .9375rem 1fr minmax(auto,73.125rem) 1fr .9375rem
+.cleanImg,
+.foonterItem.button,
+.foonterItem.collection,
+.foonterItem.smash,
+.headerHoodie,
+.headerLogo,
+.headerSubLogo {
+  opacity: 0;
+  transition: opacity .45s ease
 }
-[class*="--gc"]>* {
-  min-width: 0;
-  grid-column: 3/4
-}
-.ibg {
-  width: 100%;
-  height: 100%;
-  -o-object-fit: cover;
-  object-fit: cover
-}
-.ibg--top {
-  -o-object-position: top;
-  object-position: top
-}
-.ibg--bottom {
-  -o-object-position: bottom;
-  object-position: bottom
-}
-.ibg--left {
-  -o-object-position: left;
-  object-position: left
-}
-.ibg--right {
-  -o-object-position: right;
-  object-position: right
-}
-.ibg--contain {
-  -o-object-fit: contain;
-  object-fit: contain
+._play-anim .cleanImg,
+._play-anim .foonterItem.button,
+._play-anim .foonterItem.collection,
+._play-anim .foonterItem.smash,
+._play-anim .headerHoodie,
+._play-anim .headerLogo,
+._play-anim .headerSubLogo {
+  opacity: 1
 }
 .banner {
   overflow: hidden;
@@ -121,18 +103,27 @@ img {
 .headerHoodie {
   max-width: 5.625rem
 }
+._play-anim .headerHoodie {
+  transition-delay: .3s
+}
+._play-anim .headerLogo {
+  transition-delay: .4s
+}
 .headerSubLogo {
   max-width: 1.875rem
+}
+._play-anim .headerSubLogo {
+  transition-delay: .5s
 }
 .logoBigWrap {
   flex: 1;
   position: relative
 }
 .logoBigImg {
+  top: 0;
   left: 50%;
   -webkit-transform: translate(-50%,0);
-  transform: translate(-50%,0);
-  position: relative
+  transform: translate(-50%,0)
 }
 .cleanFit {
   position: absolute;
@@ -141,7 +132,13 @@ img {
   left: 50%;
   -webkit-transform: translate(-50%,-50%);
   transform: translate(-50%,-50%);
-  max-width: 26.0625rem
+  max-width: 28.5625rem;
+  padding-inline: 1.25rem;
+  width: 100%;
+  pointer-events: none
+}
+._play-anim .cleanImg {
+  transition-delay: .3s
 }
 .personsItems {
   position: absolute;
@@ -159,38 +156,51 @@ img {
   left: 50%;
   -webkit-transform: translate(-50%,0);
   transform: translate(-50%,0);
-  width: 25.8125rem!important
+  -webkit-transform-origin: center;
+  transform-origin: center;
+  width: 25.8125rem!important;
+  transition: -webkit-transform .55s ease;
+  transition: transform .55s ease;
+  transition: transform .55s ease,-webkit-transform .55s ease
 }
-.item_1 {
+.personsItem.item1 {
   z-index: 2
 }
-.item_2 {
+.personsItem.item2 {
   z-index: 3
 }
-.item_3 {
+.personsItem.item3 {
   z-index: 4
 }
-.item_4 {
+.personsItem.item4 {
   z-index: 3
 }
-.item_5 {
+.personsItem.item5 {
   z-index: 2
 }
-.item_6 {
+.personsItem.item6 {
   z-index: 1
 }
 .footer {
   position: relative;
   z-index: 5;
-  display: grid;
   align-items: center
 }
 .foonterItem.collection {
   max-width: 12.5rem
 }
+._play-anim .foonterItem.collection {
+  transition-delay: .3s
+}
+._play-anim .foonterItem.button {
+  transition-delay: .4s
+}
 .foonterItem.smash {
   max-width: 4.4375rem;
   justify-self: flex-end
+}
+._play-anim .foonterItem.smash {
+  transition-delay: .5s
 }
 @media (min-width:29.99875em) {
   .container {
@@ -214,7 +224,11 @@ img {
   .container {
     padding-bottom: 1.25rem
   }
+  .logoBigImg {
+    position: relative
+  }
   .footer {
+    display: grid;
     grid-template-columns: repeat(3,1fr)
   }
   .foonterItem.button {
@@ -238,11 +252,11 @@ img {
   }
   .logoBigImg {
     position: absolute;
-    top: 0;
     width: 53.125rem!important
   }
   .footer {
-    grid-template-columns: repeat(2,1fr)
+    display: flex;
+    justify-content: space-between
   }
   .foonterItem.button {
     display: none
@@ -261,9 +275,20 @@ img {
   .personsItems {
     grid-template-columns: repeat(3,1fr)
   }
-  .item_1,
-  .item_2,
-  .item_3 {
+  .personsItem.item1,
+  .personsItem.item2,
+  .personsItem.item3 {
     display: none
+  }
+  .footer {
+    flex-direction: column-reverse;
+    gap: .625rem
+  }
+}
+@media (any-hover:hover) {
+  .personsItem img:hover {
+    cursor: pointer;
+    -webkit-transform: translate(-50%,0) scale(1.05);
+    transform: translate(-50%,0) scale(1.05)
   }
 }

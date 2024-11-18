@@ -1,3 +1,16 @@
+.elemetn {
+  min-height: 100vh;
+}
+
+%opacity {
+  opacity: 0;
+  transition: opacity .45s ease;
+  @extend %opacity;
+  ._play-anim & {
+    opacity: 1;
+  }
+}
+
 .banner {
   overflow: hidden;
   min-height: toRem(600);
@@ -31,9 +44,14 @@
      padding-top: toRem(30);
   }
 }
+
+// === HEADER =================
 .header {
   display: flex;
   justify-content: space-between;
+  &._play-anim {
+
+  }
   @media (min-width:$mobileSmall){
      margin-bottom: toRem(15); 
   }
@@ -41,8 +59,13 @@
      margin-bottom: toRem(30); 
   }
 }
+
 .headerHoodie {
+  @extend %opacity;
   max-width: toRem(90);
+  ._play-anim & {
+    transition-delay: 0.3s;
+  }
 }
 .headerRight {
   @media (min-width:$mobileSmall){
@@ -51,6 +74,10 @@
   }
 }
 .headerLogo {
+  @extend %opacity;
+  ._play-anim & {
+    transition-delay: 0.4s;
+  }
   @media (min-width:$mobileSmall){
     max-width: toRem(98);
   }
@@ -59,10 +86,14 @@
   }
 }
 .headerSubLogo {
+  @extend %opacity;
   max-width: toRem(30);
+  ._play-anim & {
+    transition-delay: 0.5s;
+  }
 }
 
-
+// === BODY =========================
 .logoBigWrap {
   flex: 1;
   position: relative;
@@ -75,23 +106,37 @@
 }
 
 .logoBigImg {
+  top: 0;
   left: 50%;
-  transform: translate(-50%,0);
-  position: relative;
+  transform: translate(-50%,0%);
+  @media (min-width:toEm(850.98)){
+    position: relative;
+  }
   @media (max-width: toEm(850.98)){
     position: absolute;
-    top: 0;
     width: toRem(850) !important;
   }
 }
+
 .cleanFit {
   position: absolute;
   z-index: 3;
   top: 57%;
   left: 50%;
   transform: translate(-50%,-50%);
-  max-width: toRem(417);
+  max-width: toRem(457);
+  padding-inline: toRem(20);
+  width: 100%;
+  pointer-events: none;
 }
+.cleanImg {
+  @extend %opacity;
+  ._play-anim & {
+    transition-delay: 0.3s;
+  }
+}
+
+// == PERSONS ==========================================
 .personsItems {
   position: absolute;
   inset: 0;
@@ -112,59 +157,74 @@
     bottom: 0;
     left: 50%;
     transform: translate(-50%,0);
+    transform-origin: center;
     width: toRem(413) !important;
+    transition: transform .55s ease;
+    @media (any-hover: hover){
+      &:hover{
+        cursor: pointer;
+        transform: translate(-50%,0) scale(1.05);
+      }
+    }
   }
-}
-.item {
-  &_1,
-  &_2,
-  &_3 {
+  &.item1,
+  &.item2,
+  &.item3 {
     @media (max-width:$mobileSmall){
        display: none; 
     }
   }
-	// .item_1
-	&_1 {
+  &.item1 {
     z-index: 2;
-	}
-	// .item_2
-	&_2 {
+  }
+  &.item2 {
     z-index: 3;
-	}
-	// .item_3
-	&_3 {
+  }
+  &.item3 {
     z-index: 4;
-	}
-	// .item_4
-	&_4 {
+  }
+  &.item4 {
     z-index: 3;
-	}
-	// .item_5
-	&_5 {
+  }
+  &.item5 {
     z-index: 2;
-	}
-	// .item_6
-	&_6 {
-    z-index: 1;
-	}
+  }
+  &.item6 {
+      z-index: 1;
+  }
 }
+
+// == FOOTER =============================================
 .footer {
   position: relative;
   z-index: 5;
-  display: grid;
   align-items: center;
   @media (min-width:toEm(850.98)){
+    display: grid;
     grid-template-columns: repeat(3,1fr);
   }
   @media (max-width: toEm(850.98)){
-      grid-template-columns: repeat(2,1fr);
+    display: flex;
+    justify-content: space-between;
+  }
+  @media (max-width:$mobileSmall){
+     flex-direction: column-reverse; 
+     gap: toRem(10);
   }
 }
 .foonterItem {
   &.collection {
     max-width: toRem(200);
+    @extend %opacity;
+    ._play-anim & {
+      transition-delay: 0.3s;
+    }
   }
   &.button {
+    @extend %opacity;
+    ._play-anim & {
+      transition-delay: 0.4s;
+    }
     @media (min-width:toEm(850.98)){
       max-width: toRem(184);
       justify-self: center;
@@ -174,8 +234,13 @@
     }
   }
   &.smash {
+    @extend %opacity;
+    ._play-anim & {
+      transition-delay: 0.5s;
+    }
     max-width: toRem(71);
     justify-self: flex-end;
     
   }
 }
+
