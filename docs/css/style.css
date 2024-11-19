@@ -20,8 +20,8 @@ html {
 body {
   color: #000;
   line-height: 1;
-  font-family: Inter,sans-seriv;
-  font-size: .875rem;
+  font-family: akzidenzgroteskpro,sans-serif;
+  font-size: 1.125rem;
   -ms-text-size-adjust: 100%;
   -moz-text-size-adjust: 100%;
   -webkit-text-size-adjust: 100%;
@@ -31,7 +31,7 @@ body {
 button,
 input,
 textarea {
-  font-family: Inter,sans-seriv;
+  font-family: akzidenzgroteskpro,sans-serif;
   font-size: inherit;
   line-height: inherit;
   color: inherit;
@@ -54,28 +54,30 @@ img {
   vertical-align: top
 }
 .elemetn {
-  /* min-height: 100vh */
+  min-height: 100vh
 }
 .cleanImg,
-.foonterItem.button,
-.foonterItem.collection,
-.foonterItem.smash,
-.headerHoodie,
+.foonterItem.item1,
+.foonterItem.item2,
+.foonterItem.item3,
 .headerLogo,
-.headerSubLogo {
+.headerTxt,
+.headerTxt2 {
   opacity: 0;
   transition: opacity .45s ease
 }
 ._play-anim .cleanImg,
-._play-anim .foonterItem.button,
-._play-anim .foonterItem.collection,
-._play-anim .foonterItem.smash,
-._play-anim .headerHoodie,
+._play-anim .foonterItem.item1,
+._play-anim .foonterItem.item2,
+._play-anim .foonterItem.item3,
 ._play-anim .headerLogo,
-._play-anim .headerSubLogo {
+._play-anim .headerTxt,
+._play-anim .headerTxt2 {
   opacity: 1
 }
 .banner {
+  font-weight: 300;
+  font-size: 1.125rem;
   overflow: hidden;
   min-height: 37.5rem;
   display: flex;
@@ -97,27 +99,26 @@ img {
   justify-content: space-between
 }
 .header {
+  color: #817d66;
   display: flex;
   justify-content: space-between
 }
-.headerHoodie {
-  max-width: 5.625rem
-}
-._play-anim .headerHoodie {
+._play-anim .headerTxt {
   transition-delay: .3s
 }
 ._play-anim .headerLogo {
   transition-delay: .4s
 }
-.headerSubLogo {
+.headerTxt2 {
   max-width: 1.875rem
 }
-._play-anim .headerSubLogo {
+._play-anim .headerTxt2 {
   transition-delay: .5s
 }
 .logoBigWrap {
   flex: 1;
-  position: relative
+  position: relative;
+  z-index: 2
 }
 .logoBigImg {
   top: 0;
@@ -182,27 +183,47 @@ img {
   z-index: 1
 }
 .footer {
+  color: #fff;
   position: relative;
   z-index: 5;
   align-items: center
 }
-.foonterItem.collection {
-  max-width: 12.5rem
-}
-._play-anim .foonterItem.collection {
+._play-anim .foonterItem.item1 {
   transition-delay: .3s
 }
-._play-anim .foonterItem.button {
+._play-anim .foonterItem.item2 {
   transition-delay: .4s
 }
-.foonterItem.smash {
-  max-width: 4.4375rem;
+.foonterItem.item3 {
   justify-self: flex-end
 }
-._play-anim .foonterItem.smash {
+._play-anim .foonterItem.item3 {
   transition-delay: .5s
 }
 @media (min-width:29.99875em) {
+  .container::after,
+  .container::before {
+    content: "";
+    position: absolute;
+    opacity: .7;
+    bottom: 0;
+    z-index: 0;
+    background-image: url(../img/elements/shadow.webp);
+    background-repeat: no-repeat;
+    background-size: contain;
+    height: 32.6875rem;
+    width: 45.1875rem
+  }
+  .container::before {
+    left: 0;
+    -webkit-transform: translate(-45%,0);
+    transform: translate(-45%,0)
+  }
+  .container::after {
+    right: 0;
+    -webkit-transform: scaleX(-1) translate(-40%,0);
+    transform: scaleX(-1) translate(-40%,0)
+  }
   .container {
     padding-top: .625rem
   }
@@ -211,10 +232,8 @@ img {
   }
   .headerRight {
     display: flex;
+    align-items: center;
     gap: 0 4.5rem
-  }
-  .headerLogo {
-    max-width: 6.125rem
   }
   .personsItems {
     grid-template-columns: repeat(6,1fr)
@@ -231,7 +250,14 @@ img {
     display: grid;
     grid-template-columns: repeat(3,1fr)
   }
-  .foonterItem.button {
+  .foonterItem.item2 {
+    display: grid;
+    place-items: center;
+    width: 100%;
+    min-height: 3.3125rem;
+    background-color: #d32a2b;
+    text-decoration: underline;
+    text-underline-offset: .1875rem;
     max-width: 11.5rem;
     justify-self: center
   }
@@ -258,7 +284,7 @@ img {
     display: flex;
     justify-content: space-between
   }
-  .foonterItem.button {
+  .foonterItem.item2 {
     display: none
   }
 }
