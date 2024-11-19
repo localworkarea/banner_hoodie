@@ -20,7 +20,7 @@ html {
 body {
   color: #000;
   line-height: 1;
-  font-family: akzidenzgroteskpro,sans-serif;
+  font-family: Gilroy;
   font-size: 1.125rem;
   -ms-text-size-adjust: 100%;
   -moz-text-size-adjust: 100%;
@@ -31,7 +31,7 @@ body {
 button,
 input,
 textarea {
-  font-family: akzidenzgroteskpro,sans-serif;
+  font-family: Gilroy;
   font-size: inherit;
   line-height: inherit;
   color: inherit;
@@ -53,9 +53,6 @@ ul li {
 img {
   vertical-align: top
 }
-.elemetn {
-  min-height: 100vh
-}
 .cleanImg,
 .foonterItem.item1,
 .foonterItem.item2,
@@ -76,8 +73,9 @@ img {
   opacity: 1
 }
 .banner {
-  font-weight: 300;
+  margin-top: 100vh;
   font-size: 1.125rem;
+  font-weight: 500;
   overflow: hidden;
   min-height: 37.5rem;
   display: flex;
@@ -101,6 +99,7 @@ img {
 .header {
   color: #817d66;
   display: flex;
+  align-items: center;
   justify-content: space-between
 }
 ._play-anim .headerTxt {
@@ -119,6 +118,9 @@ img {
   flex: 1;
   position: relative;
   z-index: 2
+}
+.logoBigPrl {
+  position: relative
 }
 .logoBigImg {
   top: 0;
@@ -164,9 +166,6 @@ img {
   transition: transform .55s ease;
   transition: transform .55s ease,-webkit-transform .55s ease
 }
-.personsItem.item1 {
-  z-index: 2
-}
 .personsItem.item2 {
   z-index: 3
 }
@@ -183,6 +182,8 @@ img {
   z-index: 1
 }
 .footer {
+  letter-spacing: .05em;
+  font-weight: 500;
   color: #fff;
   position: relative;
   z-index: 5;
@@ -238,6 +239,9 @@ img {
   .personsItems {
     grid-template-columns: repeat(6,1fr)
   }
+  .personsItem.item1 {
+    z-index: 2
+  }
 }
 @media (min-width:53.18625em) {
   .container {
@@ -251,15 +255,43 @@ img {
     grid-template-columns: repeat(3,1fr)
   }
   .foonterItem.item2 {
+    position: relative;
     display: grid;
     place-items: center;
     width: 100%;
     min-height: 3.3125rem;
-    background-color: #d32a2b;
-    text-decoration: underline;
-    text-underline-offset: .1875rem;
     max-width: 11.5rem;
     justify-self: center
+  }
+  .foonterItem.item2 span {
+    display: inline-block;
+    position: relative
+  }
+  .foonterItem.item2 span::before {
+    content: "";
+    position: absolute;
+    bottom: -.125rem;
+    left: 0;
+    width: 100%;
+    height: .125rem;
+    background-color: #fff;
+    transition: opacity .3s ease 0s
+  }
+  .foonterItem.item2::before {
+    content: "";
+    position: absolute;
+    inset: 0;
+    z-index: -1;
+    background-color: #d32a2b;
+    transition: background-color .3s ease 0s
+  }
+  .foonterItem.item2:active span::before {
+    opacity: 0
+  }
+}
+@media (min-width:53.18625em)and (any-hover:hover) {
+  .foonterItem.item2:hover::before {
+    background-color: #000
   }
 }
 @media (min-width:81.31125em) {
@@ -301,10 +333,13 @@ img {
   .personsItems {
     grid-template-columns: repeat(3,1fr)
   }
-  .personsItem.item1,
   .personsItem.item2,
-  .personsItem.item3 {
+  .personsItem.item3,
+  .personsItem.item4 {
     display: none
+  }
+  .personsItem.item1 {
+    z-index: 4
   }
   .footer {
     flex-direction: column-reverse;

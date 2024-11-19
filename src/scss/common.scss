@@ -1,6 +1,3 @@
-.elemetn {
-  min-height: 100vh;
-}
 
 %opacity {
   opacity: 0;
@@ -12,8 +9,10 @@
 }
 
 .banner {
-  font-weight: 300;
+  margin-top: 100vh;
   font-size: toRem(18);
+  font-weight: 500;
+ 
   overflow: hidden;
   min-height: toRem(600);
   display: flex;
@@ -78,6 +77,7 @@
 .header {
   color: #817d66;
   display: flex;
+  align-items: center;
   justify-content: space-between;
   &._play-anim {
 
@@ -135,6 +135,11 @@
       margin: 0 toRem(-20);
   }
 }
+
+.logoBigPrl {
+  position: relative;
+}
+
 
 .logoBigImg {
   top: 0;
@@ -198,15 +203,20 @@
       }
     }
   }
-  &.item1,
   &.item2,
-  &.item3 {
+  &.item3,
+  &.item4 {
     @media (max-width:$mobileSmall){
        display: none; 
     }
   }
   &.item1 {
-    z-index: 2;
+    @media (min-width:$mobileSmall){
+      z-index: 2;
+    }
+    @media (max-width:$mobileSmall){
+       z-index: 4; 
+    }
   }
   &.item2 {
     z-index: 3;
@@ -227,6 +237,8 @@
 
 // == FOOTER =============================================
 .footer {
+  letter-spacing: 0.05em;
+  font-weight: 500;
   color: #fff;
   position: relative;
   z-index: 5;
@@ -257,15 +269,49 @@
       transition-delay: 0.4s;
     }
     @media (min-width:toEm(850.98)){
+      position: relative;
       display: grid;
       place-items: center;
       width: 100%;
       min-height: toRem(53);
-      background-color: #D32A2B;
-      text-decoration: underline;
-      text-underline-offset: toRem(3);
       max-width: toRem(184);
       justify-self: center;
+      span {
+        display: inline-block;
+        position: relative;
+        &::before {
+          content: "";
+          position: absolute;
+          bottom: toRem(-2);
+          left: 0;
+          width: 100%;
+          height: toRem(2);
+          background-color: #fff;
+          transition: opacity .3s ease 0s;
+        }
+      }
+      &::before {
+        content: "";
+        position: absolute;
+        inset: 0;
+        z-index: -1;
+        background-color: #D32A2B;
+        transition: background-color .3s ease 0s;
+      }
+      @media (any-hover: hover){
+        &:hover{
+          &::before {
+            background-color: #000;
+          }
+        }
+      }
+      &:active {
+        span {
+          &::before {
+            opacity: 0;
+          }
+        }
+      }
     }
     @media (max-width: toEm(850.98)){
       display: none;
