@@ -1,7 +1,13 @@
 @font-face {
-	font-family: Akzidenz;
+	font-family: 'Akzidenz-Grotesk Pro Light Ext';
+	src: url('../fonts/AkzidenzGroteskPro-LightEx.eot'), 
+			local('../fonts/Akzidenz-Grotesk Pro Light Ext'), local('../fonts/AkzidenzGroteskPro-LightEx'),
+			url('../fonts/AkzidenzGroteskPro-LightEx.eot?#iefix') format('embedded-opentype'),
+			url('../fonts/AkzidenzGroteskPro-LightEx.woff2') format('woff2'),
+			url('../fonts/AkzidenzGroteskPro-LightEx.woff') format('woff'),
+			url('../fonts/AkzidenzGroteskPro-LightEx.ttf') format('truetype');
 	font-display: swap;
-	src: url("../fonts/Akzidenz-Grotesk-Pro-Regular-Ext.woff2") format("woff2");
-	font-weight: 400;
+	font-weight: 300;
 	font-style: normal;
 }
+

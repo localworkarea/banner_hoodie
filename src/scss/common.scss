@@ -9,9 +9,9 @@
 }
 
 .banner {
-  margin-top: 100vh;
+  // margin-top: 100vh;
   font-size: toRem(18);
- 
+  font-weight: 300;
   overflow: hidden;
   min-height: toRem(600);
   display: flex;
@@ -178,8 +178,14 @@
   z-index: 2;
   display: grid;
   align-items: end;
-  @media (min-width:$mobileSmall){
+  @media (min-width:toEm(700.98)){
     grid-template-columns: repeat(6,1fr);
+  }
+  @media (max-width: toEm(700.98)) and (min-width: toEm(570.98)) {
+    grid-template-columns: repeat(5,1fr); 
+  }
+  @media (max-width: toEm(570.98)) and (min-width: $mobileSmall) {
+    grid-template-columns: repeat((4,1fr));   
   }
   @media (max-width:$mobileSmall){
     grid-template-columns: repeat((3,1fr));   
@@ -219,12 +225,21 @@
   }
   &.item2 {
     z-index: 3;
+    @media (max-width: toEm(700.98)){
+        display: none;
+    }
   }
   &.item3 {
     z-index: 4;
+    @media (max-width: toEm(700.98)){
+        z-index: 3;
+    }
   }
   &.item4 {
     z-index: 3;
+    @media (max-width: toEm(570.98)){
+      display: none;
+    }
   }
   &.item5 {
     z-index: 2;
@@ -272,7 +287,8 @@
       place-items: center;
       width: 100%;
       min-height: toRem(53);
-      max-width: toRem(184);
+      max-width: toRem(185);
+      font-size: toRem(16.5);
       justify-self: center;
       span {
         display: inline-block;

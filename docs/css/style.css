@@ -1,8 +1,8 @@
 @font-face {
-  font-family: Akzidenz;
+  font-family: "Akzidenz-Grotesk Pro Light Ext";
+  src: url(../fonts/AkzidenzGroteskPro-LightEx.eot),local("../fonts/Akzidenz-Grotesk Pro Light Ext"),local("../fonts/AkzidenzGroteskPro-LightEx"),url(../fonts/AkzidenzGroteskPro-LightEx.eot?#iefix) format("embedded-opentype"),url(../fonts/AkzidenzGroteskPro-LightEx.woff2) format("woff2"),url(../fonts/AkzidenzGroteskPro-LightEx.woff) format("woff"),url(../fonts/AkzidenzGroteskPro-LightEx.ttf) format("truetype");
   font-display: swap;
-  src: url(../fonts/Akzidenz-Grotesk-Pro-Regular-Ext.woff2) format("woff2");
-  font-weight: 400;
+  font-weight: 300;
   font-style: normal
 }
 * {
@@ -27,7 +27,7 @@ html {
 body {
   color: #000;
   line-height: 1;
-  font-family: Akzidenz;
+  font-family: "Akzidenz-Grotesk Pro Light Ext";
   font-size: 1.125rem;
   -ms-text-size-adjust: 100%;
   -moz-text-size-adjust: 100%;
@@ -71,8 +71,8 @@ img {
   opacity: 1
 }
 .banner {
-  margin-top: 100vh;
   font-size: 1.125rem;
+  font-weight: 300;
   overflow: hidden;
   min-height: 37.5rem;
   display: flex;
@@ -232,11 +232,13 @@ img {
     align-items: center;
     gap: 0 4.5rem
   }
-  .personsItems {
-    grid-template-columns: repeat(6,1fr)
-  }
   .personsItem.item1 {
     z-index: 2
+  }
+}
+@media (min-width:43.81125em) {
+  .personsItems {
+    grid-template-columns: repeat(6,1fr)
   }
 }
 @media (min-width:53.18625em) {
@@ -256,7 +258,8 @@ img {
     place-items: center;
     width: 100%;
     min-height: 3.3125rem;
-    max-width: 11.5rem;
+    max-width: 11.5625rem;
+    font-size: 1.03125rem;
     justify-self: center
   }
   .foonterItem.item2 span {
@@ -316,6 +319,19 @@ img {
     display: none
   }
 }
+@media (max-width:43.81125em) {
+  .personsItem.item2 {
+    display: none
+  }
+  .personsItem.item3 {
+    z-index: 3
+  }
+}
+@media (max-width:35.68625em) {
+  .personsItem.item4 {
+    display: none
+  }
+}
 @media (max-width:29.99875em) {
   .container {
     padding-top: 1.875rem
@@ -340,6 +356,16 @@ img {
   .footer {
     flex-direction: column-reverse;
     gap: .625rem
+  }
+}
+@media (max-width:43.81125em)and (min-width:35.68625em) {
+  .personsItems {
+    grid-template-columns: repeat(5,1fr)
+  }
+}
+@media (max-width:35.68625em)and (min-width:29.99875em) {
+  .personsItems {
+    grid-template-columns: repeat(4,1fr)
   }
 }
 @media (any-hover:hover) {
