@@ -1,3 +1,10 @@
+@font-face {
+  font-family: Akzidenz;
+  font-display: swap;
+  src: url(../fonts/Akzidenz-Grotesk-Pro-Regular-Ext.woff2) format("woff2");
+  font-weight: 400;
+  font-style: normal
+}
 * {
   padding: 0;
   margin: 0;
@@ -20,22 +27,13 @@ html {
 body {
   color: #000;
   line-height: 1;
-  font-family: Gilroy;
+  font-family: Akzidenz;
   font-size: 1.125rem;
   -ms-text-size-adjust: 100%;
   -moz-text-size-adjust: 100%;
   -webkit-text-size-adjust: 100%;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale
-}
-button,
-input,
-textarea {
-  font-family: Gilroy;
-  font-size: inherit;
-  line-height: inherit;
-  color: inherit;
-  background-color: rgba(0,0,0,0)
 }
 button,
 option,
@@ -75,7 +73,6 @@ img {
 .banner {
   margin-top: 100vh;
   font-size: 1.125rem;
-  font-weight: 500;
   overflow: hidden;
   min-height: 37.5rem;
   display: flex;
@@ -182,7 +179,6 @@ img {
   z-index: 1
 }
 .footer {
-  letter-spacing: .05em;
   font-weight: 500;
   color: #fff;
   position: relative;

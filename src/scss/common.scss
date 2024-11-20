@@ -11,7 +11,6 @@
 .banner {
   margin-top: 100vh;
   font-size: toRem(18);
-  font-weight: 500;
  
   overflow: hidden;
   min-height: toRem(600);
@@ -237,7 +236,6 @@
 
 // == FOOTER =============================================
 .footer {
-  letter-spacing: 0.05em;
   font-weight: 500;
   color: #fff;
   position: relative;
